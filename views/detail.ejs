@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Sederhana</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <%- include('header'); %>
+    <div class="container mt-4">
+      <h1 class="text-center"><%= artikel.judul %></h1>
+      <textarea name="IsiArtikel" class="form-control mt-3" id="floatingTextarea2Disabled" rows="50" cols="150" disabled><%= artikel.isi %></textarea>
+    </div>
+  </body>
+</html>

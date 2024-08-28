@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <%- include('header'); %>
+    <div class="container mt-4">
+      <form action="/edit/<%= artikel.id %>" method="post">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Judul</label>
+          <input name="JudulArtikel" value="<%= artikel.judul %>" class="form-control" id="exampleInputEmail1" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Rangkuman</label>
+          <textarea name="RangkumanArtikel" class="form-control" id="exampleFormControlTextarea1" rows="3"><%= artikel.rangkuman %></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Isi Artikel</label>
+          <textarea name="IsiArtikel" class="form-control" id="exampleFormControlTextarea1" rows="5"><%= artikel.isi %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node CRUD</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <%- include('header'); %>
+    <div class="container mt-3">
+      <a href="/tambah" class="btn btn-success mb-3">Tambah</a>
+      <% article.forEach((artikel) => { %>
+      <div class="card text-bg-light mb-4">
+        <div class="card-body">
+          <h5 class="card-title"><%= artikel.judul %></h5>
+          <p class="card-text"><%= artikel.rangkuman %></p>
+          <a href="/detail/<%= artikel.id %>" class="btn btn-primary">Baca Lebih Lanjut</a>
+          <a href="/ubah/<%= artikel.id %>" class="btn btn-warning">Edit</a>
+          <form action="/delete/<%= artikel.id %>" method="post">
+            <input type="submit" value="hapus" class="btn btn-danger mt-1" />
+          </form>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
